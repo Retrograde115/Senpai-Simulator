@@ -219,6 +219,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DialogueEngine.cs" />
     <Compile Include="Assets\DialogueTest.cs" />
     <Compile Include="Assets\RetroTest.cs" />
     <Compile Include="Assets\Scripts\PlayerLook.cs" />
@@ -226,6 +227,7 @@
     <Compile Include="Assets\Test.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\BoxChanScript.txt" />
     <None Include="Assets\TestText.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

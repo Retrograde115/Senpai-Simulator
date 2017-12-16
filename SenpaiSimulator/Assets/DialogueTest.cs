@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class DialogueTest : MonoBehaviour {
 
-	private void Update()
+	Camera cam;
+
+	void Start()
 	{
+		cam = GetComponent<Camera>();
+	}
+
+	void Update()
+	{
+		
 		if (Input.GetMouseButtonDown(0))
 		{
 		
 			RaycastHit hit;
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Ray ray = new Ray();
+			ray = cam.ScreenPointToRay(Input.mousePosition);
 
 			if (Physics.Raycast(ray, out hit, 100))
 			{
