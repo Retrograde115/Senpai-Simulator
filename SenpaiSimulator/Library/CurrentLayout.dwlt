@@ -14,9 +14,9 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 0
-    y: 43
+    y: 42
     width: 1920
-    height: 997
+    height: 998
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
@@ -41,6 +41,13 @@ MonoBehaviour:
     x: 0
     y: 30
     width: 1920
+<<<<<<< HEAD
+    height: 948
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
+  vertical: 0
+  controlID: 112
+=======
     height: 947
   m_MinSize: {x: 683, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
@@ -50,6 +57,7 @@ MonoBehaviour:
 =======
   controlID: 111
 >>>>>>> LoganBranch
+>>>>>>> master
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -66,10 +74,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1358
     y: 0
+<<<<<<< HEAD
+    width: 561
+    height: 948
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+=======
     width: 562
     height: 947
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> master
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -91,10 +106,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+    width: 405
+    height: 672
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+=======
     width: 404
     height: 671
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> master
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -115,8 +137,13 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
+    y: 672
+    width: 1359
+=======
     y: 671
     width: 1358
+>>>>>>> master
     height: 276
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
@@ -146,7 +173,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1920
+<<<<<<< HEAD
+    height: 998
+=======
     height: 997
+>>>>>>> master
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
@@ -185,7 +216,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 977
+    y: 978
     width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
@@ -208,6 +239,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+    width: 1359
+    height: 948
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
+  vertical: 1
+  controlID: 50
+=======
     width: 1358
     height: 947
   m_MinSize: {x: 406, y: 342}
@@ -218,6 +257,7 @@ MonoBehaviour:
 =======
   controlID: 49
 >>>>>>> LoganBranch
+>>>>>>> master
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -236,6 +276,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+    width: 1359
+    height: 672
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
+  vertical: 0
+  controlID: 51
+=======
     width: 1358
     height: 671
   m_MinSize: {x: 406, y: 221}
@@ -246,6 +294,7 @@ MonoBehaviour:
 =======
   controlID: 50
 >>>>>>> LoganBranch
+>>>>>>> master
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -263,7 +312,7 @@ MonoBehaviour:
     x: 404
     y: 0
     width: 954
-    height: 671
+    height: 672
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
@@ -343,13 +392,19 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: A:\SenpaiSim\SenpaiSimulator
+  m_LastProjectPath: E:\Senpai-Simulator\SenpaiSimulator
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
+    m_SelectedIDs: 82270000
+    m_LastClickedID: 10114
+    m_ExpandedIDs: 000000008227000000ca9a3bffffff7f
+=======
     m_SelectedIDs: 2e270000
     m_LastClickedID: 10030
     m_ExpandedIDs: 000000005a270000
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: Tree_Textures
@@ -377,7 +432,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
+    m_ExpandedIDs: 0000000082270000
+=======
     m_ExpandedIDs: 000000005a270000
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -454,10 +513,17 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 1361
+    y: 91
+    width: 559
+    height: 927
+=======
     x: 1360
     y: 92
     width: 560
     height: 926
+>>>>>>> master
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
@@ -488,6 +554,16 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
+    y: 91
+    width: 403
+    height: 651
+  m_TreeViewState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 1c280000
+    m_LastClickedID: 10268
+    m_ExpandedIDs: 60f9ffff00000000
+=======
     y: 92
     width: 402
     height: 650
@@ -502,6 +578,7 @@ MonoBehaviour:
     m_LastClickedID: -65374
     m_ExpandedIDs: 9800ffffa6fbffff00000000d8270000
 >>>>>>> LoganBranch
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -546,16 +623,30 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 407
+    y: 91
+=======
     x: 406
     y: 92
+>>>>>>> master
     width: 950
-    height: 650
+    height: 651
   m_SceneLighting: 1
+<<<<<<< HEAD
+  lastFramingTime: 282.9972729376004
+=======
   lastFramingTime: 3027.2167937915115
+>>>>>>> master
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
+    m_Target: {x: 1.0529013, y: 2.4777372, z: 3.973247}
+    speed: 2
+    m_Value: {x: 1.0529013, y: 2.4777372, z: 3.973247}
+=======
 <<<<<<< HEAD
     m_Target: {x: 78.720276, y: 197.52295, z: 185.35913}
     speed: 2
@@ -565,6 +656,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 3.2061582, y: 0.24100399, z: 1.256649}
 >>>>>>> LoganBranch
+>>>>>>> master
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -587,6 +679,15 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
+<<<<<<< HEAD
+    m_Target: {x: -0.053044934, y: -0.5041484, z: 0.03104445, w: -0.8614272}
+    speed: 2
+    m_Value: {x: -0.053044938, y: -0.5041485, z: 0.031044452, w: -0.86142725}
+  m_Size:
+    m_Target: 18.420103
+    speed: 2
+    m_Value: 18.420103
+=======
     m_Target: {x: -0.30451748, y: 0.17644812, z: -0.057131104, w: -0.93432254}
     speed: 2
 <<<<<<< HEAD
@@ -602,6 +703,7 @@ MonoBehaviour:
     speed: 2
     m_Value: 25.228601
 >>>>>>> LoganBranch
+>>>>>>> master
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -635,10 +737,15 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 407
+    y: 91
+=======
     x: 406
     y: 92
+>>>>>>> master
     width: 950
-    height: 650
+    height: 651
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -649,8 +756,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     m_HBaseRangeMin: -475
     m_HBaseRangeMax: 475
-    m_VBaseRangeMin: -316.5
-    m_VBaseRangeMax: 316.5
+    m_VBaseRangeMin: -317
+    m_VBaseRangeMax: 317
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -668,9 +775,9 @@ MonoBehaviour:
       x: 0
       y: 17
       width: 950
-      height: 633
+      height: 634
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 475, y: 316.5}
+    m_Translation: {x: 475, y: 317}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -678,14 +785,14 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -475
-      y: -316.5
+      y: -317
       width: 950
-      height: 633
+      height: 634
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 950, y: 650}
+  m_LastWindowPixelSize: {x: 950, y: 651}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
