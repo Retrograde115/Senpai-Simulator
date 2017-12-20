@@ -219,20 +219,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CompTester.cs" />
-    <Compile Include="Assets\DialogueEngine.cs" />
-    <Compile Include="Assets\DialogueHandler.cs" />
-    <Compile Include="Assets\DialogueTest.cs" />
-    <Compile Include="Assets\RetroTest.cs" />
-    <Compile Include="Assets\Scripts\PlayerCrouch.cs" />
-    <Compile Include="Assets\Scripts\PlayerLook.cs" />
-    <Compile Include="Assets\Scripts\PlayerMotor.cs" />
-    <Compile Include="Assets\Scripts\PlayerMove.cs" />
-    <Compile Include="Assets\Test.cs" />
-    <Compile Include="Assets\Text Files\TextAssets.cs" />
+    <Compile Include="Assets\Scripts\DialogueEngine\Conversation.cs" />
+    <Compile Include="Assets\Scripts\DialogueEngine\DialogueHandler.cs" />
+    <Compile Include="Assets\Scripts\DialogueEngine\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCrouch.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCursor.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMotor.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\TestText.txt" />
     <None Include="Assets\Text Files\BoxChanScript.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
