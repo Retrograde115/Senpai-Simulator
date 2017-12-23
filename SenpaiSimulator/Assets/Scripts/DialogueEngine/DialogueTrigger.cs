@@ -18,6 +18,11 @@ public class DialogueTrigger : MonoBehaviour {
         {
             TriggerDialogue();
         }
+
+        if (DialogueHandler.isTalking == true && Input.GetKeyUp(KeyCode.Space))
+        {
+            DialogueHandler.DisplayNextSentence();
+        }
     }
 
     public void TriggerDialogue()

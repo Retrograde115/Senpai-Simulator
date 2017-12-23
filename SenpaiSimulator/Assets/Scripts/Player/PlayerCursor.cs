@@ -27,6 +27,8 @@ public class PlayerCursor : MonoBehaviour {
         {
             //for debugging purposes, spits out the current object the player is looking at
             print("I'm looking at " + hit.transform.name);
+
+            //sets public variable to the GameObject being looked at
             targetObject = GameObject.Find(hit.transform.name);
         }
         else
