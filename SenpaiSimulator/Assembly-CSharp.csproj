@@ -51,13 +51,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DialogueTest.cs" />
-     <Compile Include="Assets\RetroTest.cs" />
-     <Compile Include="Assets\Scripts\PlayerCrouch.cs" />
-     <Compile Include="Assets\Scripts\PlayerLook.cs" />
-     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
-     <Compile Include="Assets\Scripts\PlayerMove.cs" />
-     <Compile Include="Assets\Test.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\DialogueEngine.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\DialogueTest.cs" />
+     <Compile Include="Assets\Scripts\Inventory\Database.cs" />
+     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Inventory\UI Follow Mouse.cs" />
+     <Compile Include="Assets\Scripts\NPC\AI.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerCrouch.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMotor.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
+     <None Include="Assets\BoxChanScript.txt" />
      <None Include="Assets\TestText.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

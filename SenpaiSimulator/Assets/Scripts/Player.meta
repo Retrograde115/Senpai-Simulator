@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 3a64b625c5f4d0c41832eeecb1d1123b
 folderAsset: yes
 timeCreated: 1513735121
+=======
+guid: f3648ec4994a7a64f85023aea9c9ca83
+folderAsset: yes
+timeCreated: 1513405533
+>>>>>>> DavidBranch
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
