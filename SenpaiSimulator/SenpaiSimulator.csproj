@@ -219,9 +219,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Dialogue\DialogueEngine.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueTest.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\Conversation.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\DialogueHandler.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Database.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Inventory\UI Follow Mouse.cs" />
+    <Compile Include="Assets\Scripts\NPC\AI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCrouch.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCursor.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
