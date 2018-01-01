@@ -35,6 +35,14 @@ public class Inventory : MonoBehaviour
     //This adds a bit off ofset to the UI element being moved around.
     public Vector3 offset;
 
+    //Not sure what this is doing, check the void Update chunk.
+    public GameObject Background;
+
+    //This two are for the item pickup.
+    private RaycastHit hit;
+    //I don't know what cullingamsk does.
+    public LayerMask cullingmask;
+
     //We also need to know the name of the object (item) pressed.
     //ID of item changed from slot.
     public int CurrentID;
@@ -66,7 +74,83 @@ public class Inventory : MonoBehaviour
         //CurrentID = Item currently being moved. -1 = Not being moved.
         if (CurrentID != -1)
             MoveObject();
+
+        //In the moment that you are holding a keydown, in this case, I.
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            //So if active, it will no longer be active and vice versa.
+            Background.SetActive(!Background.activeSelf);
+            if (Background.activeSelf)
+                //Updates the inventory so that when you pick up or drop an item, the inventory is correct.
+                UpdateInventory();
+        }
+        //Press E to pick up an item.
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            //Check camera, has to be forward facing, check to see if something is hit, 3 unit range.
+            if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 3, cullingmask))
+            {
+                //Because we're hitting something, is it the right item?
+                if(hit.transform.tag == "Item")
+                {
+                    //Access all the variables in the ItemSelf script.
+                    ItemSelf newitem = hit.transform.GetComponent<ItemSelf>();
+                    //Add more variables for newitem as needed.
+                    SearchForSameItem(data.items[newitem.ID], newitem.count, newitem.health);
+                    Destroy(hit.transform.gameObject);
+                }
+            }
+        }
 	}
+
+    //This allows stacking of same item types by searching and comparing all item types.
+    public void SearchForSameItem(ITEM item, int count, float health)
+    {
+        //Checking to make sure that shit isn't zero.
+        for(int i = 0; i < Maxcount; i++)
+        {
+            //Is the ID of the item the same?
+            if(items[i].ID == item.ID)
+            {
+                //The count can be changed to whatever. I'm making it 99.
+                //If the number exceeds the count number, can't add to the stack.
+                if(items[i].count < 99)
+                {
+                    //Add the items.
+                    items[i].count += count;
+                    //This deals with the excess.
+                    if(items[i].count > 99)
+                    {
+                        //The excess goes into the next loop.
+                        count = items[i].count - 99;
+                        //And then sets the stack at 99
+                        items[i].count = 99;
+                    }
+                    else
+                    {
+                        count = 0;
+                        //This ends the for loop because Maxcount is no longer greater than i.
+                        i = Maxcount;
+                    }
+                }
+            }
+        }
+
+        //If the count is still more than zero, means that the items don't have the same ID.
+        if(count > 0)
+        {
+            //This for loop searches for the first empty.
+            for(int i = 0; i < Maxcount; i++)
+            {
+                //If shit is empty
+                if(items[i].ID == 0)
+                {
+                    AddItem(i, item, count, health);
+                    i = Maxcount;
+                }
+            }
+        }
+    }
 
     //All the potential classes of items you could have in the inventory.
     public void AddItem(int ID, ITEM item, int count, float health)
@@ -187,10 +271,36 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            AddInventoryItem(CurrentID, items[int.Parse(ES.currentSelectedGameObject.name)]);
+            //This deals with stacking items of the same type.
+            ItemInventory II = items[int.Parse(ES.currentSelectedGameObject.name)];
 
-            //Need to add the new spot to the old spot
-            AddInventoryItem(int.Parse(ES.currentSelectedGameObject.name), currentitem);
+            //If current item isn't the same
+            if(currentitem.ID != II.ID)
+            {
+                AddInventoryItem(CurrentID, II);
+
+                //Need to add the new spot to the old spot
+                AddInventoryItem(int.Parse(ES.currentSelectedGameObject.name), currentitem);
+            }
+            else
+            {
+                //If less than 99, add it.
+                if(II.count + currentitem.count <= 99)
+                {
+                    II.count += currentitem.count;
+                }
+                //Add what's left.
+                else
+                {
+                    //Calculating what is left.
+                    AddItem(CurrentID, data.items[II.ID], II.count + currentitem.count - 99, II.health);
+                    //64 is the max in each slot so just set it at this
+                    II.count = 64;
+                }
+
+                //Update object text for item number.
+                II.ItemGameObj.GetComponentInChildren<Text>().text = II.count.ToString();
+            }
 
             //Now the old spot is empty. Essentially a reset.
             CurrentID = -1;
