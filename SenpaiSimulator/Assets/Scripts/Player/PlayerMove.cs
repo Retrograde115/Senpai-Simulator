@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : PlayerState
 {
     CharacterController charControl;
     //Private because we aren't touching this in the inspector.
@@ -17,7 +17,10 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        MovePlayer();
+        if (state == State.FREE)
+        {
+            MovePlayer();
+        }
     }
 
     void MovePlayer()

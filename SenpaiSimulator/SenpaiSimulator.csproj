@@ -219,11 +219,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Dialogue\DialogueEngine.cs" />
-    <Compile Include="Assets\Scripts\Dialogue\DialogueTest.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\Conversation.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\DialogueHandler.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\Game\GameClock.cs" />
+    <Compile Include="Assets\Scripts\Game\PlayerState.cs" />
     <Compile Include="Assets\Scripts\Inventory\Database.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\Scripts\Inventory\UI Follow Mouse.cs" />

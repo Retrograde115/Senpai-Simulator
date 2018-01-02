@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueHandler : MonoBehaviour {
+public class DialogueHandler : PlayerState{
 
     //several of the methods in this class need to be static, but the Unity inspector needs access to their variables, so they all have equivalent duplicate public/static variables
     public Text nameText;
@@ -27,7 +27,8 @@ public class DialogueHandler : MonoBehaviour {
     //this method starts the dialogue, using a Conversation class as a constructor
     public void StartDialogue (Conversation conversation)
     {
-
+        PlayerState.state = State.TALKING;
+        
         //initializes public/static variables to be equivalent
         _nameText = nameText;
         _dialogueText = dialogueText;
@@ -68,6 +69,7 @@ public class DialogueHandler : MonoBehaviour {
 
     public static void EndDialogue()
     {
+        PlayerState.state = State.FREE;
         _animator.SetBool("IsOpen", false);
         isTalking = false;
         print("End of conversation.");

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour {
+public class DialogueTrigger : PlayerState {
 
     GameObject me;
     public Conversation boxChanScript = new Conversation();
@@ -17,17 +17,17 @@ public class DialogueTrigger : MonoBehaviour {
 
     void Update()
     {
-        if (PlayerCursor.targetObject == me && Input.GetKeyUp(KeyCode.E))
+        if (PlayerCursor.targetObject == me && state == State.FREE && Input.GetKeyUp(KeyCode.E))
         {
             TriggerDialogue();
         }
 
-        if (DialogueHandler.isTalking == true && Input.GetKeyUp(KeyCode.Space))
+        if (state == State.TALKING && Input.GetKeyUp(KeyCode.Space))
         {
             DialogueHandler.DisplayNextSentence();
         }
 
-        if (DialogueHandler.isTalking == true && Input.GetKeyUp(KeyCode.Escape))
+        if (state == State.TALKING == true && Input.GetKeyUp(KeyCode.Escape))
         {
             DialogueHandler.EndDialogue();
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerLook : MonoBehaviour
+public class PlayerLook : PlayerState
 {
     public Transform playerBody;
     //Without this, the player body is not rotating with the camera. Has an option within the Inspector.
@@ -23,8 +23,11 @@ public class PlayerLook : MonoBehaviour
 
     void Update()
     {
-        RotateCamera();
+        if (state == State.FREE)
+        {
+            RotateCamera();
             //RotateCamera is updated every frame.
+        }
     }
 
     void RotateCamera()
