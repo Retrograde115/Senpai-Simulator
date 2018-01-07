@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 9
+  controlID: 117
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -325,18 +325,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Player
+    - Assets/Scripts/NPC
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Player
+  - Assets/Scripts/NPC
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Senpai-Simulator\SenpaiSimulator
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0270000
-    m_LastClickedID: 10192
+    m_SelectedIDs: f2270000
+    m_LastClickedID: 10226
     m_ExpandedIDs: 0000000078270000d2270000fe29000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -481,20 +481,20 @@ MonoBehaviour:
     height: 543
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: de060000
     m_LastClickedID: 0
-    m_ExpandedIDs: f8d1fbff1ce6fbff1ee6fbff32e6fbff6a5afdff7ad4fdff18e5fdff1ae5fdff2ee5fdff9c14feffa220feffa420feffb820feffaa2bfefffa33feff34b3feffc6b8feffc8b8feffdcb8feff2ae3feff7eeafeff80eafeff94eafeffb005ffff0a2dffff0c2dffff202dffffd043ffff6049ffff6249ffff7649ffffa2c9ffffd0caffff06e9ffff08e9ffff1ce9ffffa6fbffff00000000b0290000782b00008a2b0000bc2b0000e22e0000ec2e0000142f00001e2f0000262f0000582f000058300000843000008e300000b2310000c4310000f631000048320000b4320000da340000c4360000f636000048370000b4370000223900003439000066390000504200005a4200000643000010430000184300004243000054430000
+    m_ExpandedIDs: c4f8ffffa6fbffff000000000c2a0000322a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Canvas
-      m_OriginalName: Canvas
+      m_Name: Sphere
+      m_OriginalName: Sphere
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 14626
+      m_UserData: -3858
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
   m_ExpandedScenes:
-  - Inventory Test 2
+  - David Scene
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -533,14 +533,14 @@ MonoBehaviour:
     width: 1138
     height: 543
   m_SceneLighting: 1
-  lastFramingTime: 7228.1062328677945
+  lastFramingTime: 2049.9303803537136
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2, y: 2, z: 2}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 2, y: 2, z: 2}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -563,19 +563,19 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.14825934, y: -0.005344197, z: 0.00080102874, w: -0.98893374}
+    m_Target: {x: 0.08717229, y: -0.89959055, z: 0.21045254, w: 0.3726226}
     speed: 2
-    m_Value: {x: -0.14825934, y: -0.0053441976, z: 0.0008010288, w: -0.9889338}
+    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_Size:
-    m_Target: 2.8578837
+    m_Target: 8.058904
     speed: 2
-    m_Value: 2.8578837
+    m_Value: 8.058904
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: 0.08717229, y: -0.89959055, z: 0.21045254, w: 0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
