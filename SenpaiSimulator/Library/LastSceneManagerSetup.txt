@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Logan's Scene.unity
+- path: Assets/PlayerTesting.unity
   isLoaded: 1
   isActive: 1

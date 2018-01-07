@@ -17,7 +17,7 @@ public class DialogueTrigger : PlayerState {
 
     void Update()
     {
-        if (PlayerCursor.targetObject == me && state == State.FREE && Input.GetKeyUp(KeyCode.E))
+        if (Player.targetObject == me && state == State.FREE && Input.GetKeyUp(KeyCode.E))
         {
             TriggerDialogue();
         }

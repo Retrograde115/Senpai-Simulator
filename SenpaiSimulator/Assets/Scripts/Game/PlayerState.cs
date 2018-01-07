@@ -9,6 +9,7 @@ public class PlayerState : MonoBehaviour {
     public enum State
     {
         FREE,
-        TALKING
+        TALKING,
+        PAUSE
     }
 }

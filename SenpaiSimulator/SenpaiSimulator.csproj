@@ -228,12 +228,7 @@
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\Scripts\Inventory\UI Follow Mouse.cs" />
     <Compile Include="Assets\Scripts\NPC\AI.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerCrouch.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerCursor.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMotor.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\DialogueEngine\BoxChan.txt" />

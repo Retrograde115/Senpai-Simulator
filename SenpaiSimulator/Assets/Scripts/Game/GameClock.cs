@@ -12,7 +12,6 @@ public class GameClock : MonoBehaviour {
     public int hr;
     public string suffix;
     string clockTime;
-    bool tick = false;
 
 	// Use this for initialization
 	void Start () {
