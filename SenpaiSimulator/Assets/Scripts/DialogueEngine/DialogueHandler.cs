@@ -3,45 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueHandler : PlayerState{
+public class DialogueHandler : MonoBehaviour {
 
     //several of the methods in this class need to be static, but the Unity inspector needs access to their variables, so they all have equivalent duplicate public/static variables
     public Text nameText;
     public Text dialogueText;
     public Animator animator;
-    public static Text _nameText;
-    public static Text _dialogueText;
-    public static Animator _animator;
-    public static int dialogueCounter = 0;
 
     private static Queue<string> sentences;
 
-    //flag meant to be used for game state machine
-    public static bool isTalking;
+    public static DialogueHandler I { get; private set; }
+
+    private void Awake()
+    {
+        I = this;
+    }
 
     //initialize sentence queue
     void Start () {
         sentences = new Queue<string>();
-	}
+    }
 
     //this method starts the dialogue, using a Conversation class as a constructor
-    public void StartDialogue (Conversation conversation)
+    public void StartDialogue (Conversation conversation, DialogueTrigger dialogueTrigger)
     {
-        PlayerState.state = State.TALKING;
+        Player.Instance.state = Player.State.TALKING;
         
-        //initializes public/static variables to be equivalent
-        _nameText = nameText;
-        _dialogueText = dialogueText;
-        _animator = animator;
-
         //brings the UI to the screen
         animator.SetBool("IsOpen", true);
 
         Debug.Log("Starting conversation with " + conversation.name);
 
         nameText.text = conversation.name;
-
-        isTalking = true;
 
         //clears sentence queue just in case there is anything left in there
         sentences.Clear();
@@ -52,27 +45,26 @@ public class DialogueHandler : PlayerState{
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        DisplayNextSentence(dialogueTrigger);
     }
 
-    public static void DisplayNextSentence()
+    public void DisplayNextSentence(DialogueTrigger dialogueTrigger)
     {
         if (sentences.Count == 0)
         {
-            EndDialogue();
+            EndDialogue(dialogueTrigger);
+            dialogueTrigger.dialogueBlock++;
             return;
         }
 
         string sentence = sentences.Dequeue();
-        _dialogueText.text = sentence;
+        dialogueText.text = sentence;
     }
 
-    public static void EndDialogue()
+    public void EndDialogue(DialogueTrigger dialogueTrigger)
     {
-        PlayerState.state = State.FREE;
-        _animator.SetBool("IsOpen", false);
-        isTalking = false;
+        Player.Instance.state = Player.State.FREE;
+        animator.SetBool("IsOpen", false);
         print("End of conversation.");
-        dialogueCounter++;
     }
 }

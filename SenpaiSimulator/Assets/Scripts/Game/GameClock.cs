@@ -13,12 +13,19 @@ public class GameClock : MonoBehaviour {
     public string suffix;
     string clockTime;
 
-	// Use this for initialization
-	void Start () {
+    public static GameClock Instance { get; set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    // Use this for initialization
+    void Start () {
         _sec = sec;
 	}
 	
-	void Update () {
+	public void UpdateThis () {
         _sec += Time.deltaTime;
 
         sec = (float)Math.Floor(_sec);
@@ -29,7 +36,6 @@ public class GameClock : MonoBehaviour {
         {
             _sec = 0;
             min++;
-            tick = true;
             if (min >= 60)
             {
                 min = 0;

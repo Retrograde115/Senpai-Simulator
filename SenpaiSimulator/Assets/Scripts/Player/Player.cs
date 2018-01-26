@@ -2,47 +2,69 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : PlayerState
+public class Player : MonoBehaviour
 {
-    public float walkSpeed = 1.5f;
+    public static Player Instance { get; set; } //Singleton declaration
+
+    //inspector-initialized variables
+    public float walkSpeed = 8.0f;
     public float gravity = 9.8f;
     public float jumpForce = 20f;
-    private float downMomentum;
-    CharacterController charControl;
-    private Vector3 moveDirection = Vector3.zero;
-    public float mouseSensitivity;
+    public float mouseSensitivity = 5;
+    public float interactRange = 5;
     public Camera cam;
-    public float interactRange;
-    public static GameObject targetObject;
+    public GameObject targetObject;
 
-    void Start()
+    //internal variables
+    float downMomentum;
+    CharacterController charControl;
+    GameObject player;
+    Vector3 moveDirection = Vector3.zero;
+    ManagedUpdate updater;
+
+    //shite state machine setup
+    public State state;
+    public enum State
     {
-        charControl = GetComponent<CharacterController>();
-        state = State.FREE;
+        FREE,
+        TALKING,
+        PAUSE
     }
 
-    void Update()
+    private void Awake()
     {
-        if (state == State.FREE)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            PlayerMovement();
-            PlayerLook();
-            PlayerCrouch();
-            PlayerCursor();
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                state = State.PAUSE;
-            }
-        }
+        Instance = this; //Singleton initialization
+    }
 
-        if (state == State.PAUSE)
+    //initializes character controller and adds this class to the UpdateManager's list
+    private void Start()
+    {
+        charControl = GetComponent<CharacterController>();
+        UpdateManager.AddManagedUpdate(this, updater);
+    }
+
+    //managed update method
+    public void UpdateThis()
+    {
+        //rudimentary state machine to control player movement
+        switch (state)
         {
-            Cursor.lockState = CursorLockMode.None;
-            if (Input.GetKeyDown(KeyCode.P))
-            {
+            case State.FREE:
+                Cursor.lockState = CursorLockMode.Locked; //locks cursor to center of screen
+                PlayerMovement();
+                PlayerLook();
+                PlayerCrouch();
+                PlayerCursor();
+                break;
+
+            case State.TALKING:
+                Cursor.lockState = CursorLockMode.None; //unlocks cursor
+                break;
+
+            //defaults the state to FREE if state is somehow undefined
+            default:
                 state = State.FREE;
-            }
+                break;
         }
     }
 
@@ -151,4 +173,5 @@ public class Player : PlayerState
             targetObject = null;
         }
     }
+
 }
