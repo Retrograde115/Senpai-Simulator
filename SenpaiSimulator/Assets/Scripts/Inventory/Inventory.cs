@@ -2,18 +2,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory
-{
-    Item[] inventory = new Item[25];
+public class Inventory : ItemDatabase {
 
-    Item GetItem(int slot)
+    public List<Item> items = new List<Item>();
+
+    private void Start()
     {
-        Item item = inventory[slot];
-        return item;
+        AddItem(0);
+        AddItem(0);
+        AddItem(1);
     }
 
-    void SetItem(int slot, Item item)
+    public void AddItem(int itemID)
     {
-        inventory[slot] = item;
+        Item item = Database[itemID];
+        bool a = true;
+        foreach (Item _item in items)
+        {
+            if (item.itemName == _item.itemName)
+            {
+                _item.quantity++;
+                a = false;
+                break;
+            }
+        }
+        if (a)
+        {
+            items.Add(item);
+        }
+    }
+
+    public void DropItem(string itemName)
+    {
+        foreach (Item item in items)
+        {
+            if (itemName == item.itemName)
+            {
+                print("Found it!");
+                break;
+            }
+        }
+    }
+
+    public Item SearchInv(string name)
+    {
+        Item targetItem;
+        foreach (Item item in items)
+        {
+            if (name == item.itemName)
+            {
+                print("Found it!");
+                targetItem = item;
+                return targetItem;
+            }
+        }
+        print("Not found");
+        return null;
+    }
+
+    private void Update()
+    {
     }
 }

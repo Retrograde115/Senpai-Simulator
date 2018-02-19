@@ -219,6 +219,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ItemButton.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\Conversation.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\DialogueHandler.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\DialogueTrigger.cs" />
@@ -226,7 +227,11 @@
     <Compile Include="Assets\Scripts\Game\ManagedUpdate.cs" />
     <Compile Include="Assets\Scripts\Game\UpdateManager.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item.cs" />
+    <Compile Include="Assets\Scripts\Inventory\ItemDatabase.cs" />
+    <Compile Include="Assets\Scripts\Inventory\ItemObject.cs" />
+    <Compile Include="Assets\Scripts\Inventory\UIItem.cs" />
     <Compile Include="Assets\Scripts\NPC\AI.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerState.cs" />

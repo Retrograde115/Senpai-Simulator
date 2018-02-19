@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     {
         FREE,
         TALKING,
+        INVENTORY,
         PAUSE
     }
 
@@ -60,6 +61,11 @@ public class Player : MonoBehaviour
             case State.TALKING:
                 Cursor.lockState = CursorLockMode.None; //unlocks cursor
                 break;
+
+            case State.INVENTORY:
+                Cursor.lockState = CursorLockMode.None; //unlocks cursor
+                break;
+
 
             //defaults the state to FREE if state is somehow undefined
             default:
