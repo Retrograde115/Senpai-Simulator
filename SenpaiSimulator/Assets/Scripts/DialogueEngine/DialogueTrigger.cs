@@ -2,57 +2,66 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class DialogueTrigger : MonoBehaviour {
 
-    GameObject me;
-    public Conversation boxChanScript = new Conversation();
+    //initalized in inspector, this allows you to control which script and which lines of the script are read
+    public string characterName;
+    public int[] startLine;
+    public int[] endLine;
     public TextAsset textAsset;
-    public int startLine;
-    public int endLine;
 
+
+    public int dialogueBlock; //defines which section of script to read, iterates by one every time a conversation is seen to the end
+    ManagedUpdate updater;
+
+    Conversation boxChanScript = new Conversation(); //BoxChanScript is a placeholder name
+
+
+    //includes this class in the UpdateManager's list
     void Start()
     {
-        me = gameObject;
+        UpdateManager.AddManagedUpdate(this, updater);
+        boxChanScript.name = characterName;
     }
 
-    void Update()
+    public void UpdateThis()
     {
-        if (PlayerCursor.targetObject == me && Input.GetKeyUp(KeyCode.E))
+        //derives from player state machine, reads player state to control dialogue controls
+        switch (Player.Instance.state)
         {
-            TriggerDialogue();
-        }
+            //checks every frame for whether the player is trying to interact with the gameObject
+            case Player.State.FREE:
+                if (Player.Instance.targetObject == gameObject && Input.GetKeyUp(KeyCode.E))
+                {
+                    //this is to make sure dialogueBlock isn't out of range, and defaults it to the last block defined if it is
+                    if (dialogueBlock > startLine.Length - 1)
+                    {
+                        dialogueBlock = startLine.Length - 1;
+                    }
 
-        if (DialogueHandler.isTalking == true && Input.GetKeyUp(KeyCode.Space))
-        {
-            DialogueHandler.DisplayNextSentence();
-        }
+                    //here, we use the RFTA method to initialize the conversation, then tell DialogueHandler to take over
+                    boxChanScript.sentences.Clear();
+                    boxChanScript.sentences = boxChanScript.ReadFromTextAsset(textAsset, startLine[dialogueBlock], endLine[dialogueBlock]);
+                    DialogueHandler.I.StartDialogue(boxChanScript, this);
+                }
+                break;
 
-        if (DialogueHandler.isTalking == true && Input.GetKeyUp(KeyCode.Escape))
-        {
-            DialogueHandler.EndDialogue();
-        }
-    }
+            //controls for when dialogue is running
+            case Player.State.TALKING:
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    DialogueHandler.I.DisplayNextSentence(this);
+                }
 
-    public void TriggerDialogue()
-    {
-        boxChanScript.sentences.Clear();
-
-        switch (DialogueHandler.dialogueCounter)
-        {
-            case 0:
-                startLine = 2;
-                endLine = 7;
+                if (Input.GetKeyUp(KeyCode.Escape))
+                {
+                    DialogueHandler.I.EndDialogue(this);
+                }
                 break;
 
             default:
-                startLine = 0;
-                endLine = 0;
                 break;
         }
-
-        boxChanScript.sentences = boxChanScript.ReadFromTextAsset(textAsset, startLine, endLine);
-        FindObjectOfType<DialogueHandler>().StartDialogue(boxChanScript);
     }
-
-    
 }

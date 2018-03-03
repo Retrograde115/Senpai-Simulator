@@ -219,23 +219,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Dialogue\DialogueEngine.cs" />
-    <Compile Include="Assets\Scripts\Dialogue\DialogueTest.cs" />
+    <Compile Include="Assets\ItemButton.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\Conversation.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\DialogueHandler.cs" />
     <Compile Include="Assets\Scripts\DialogueEngine\DialogueTrigger.cs" />
-    <Compile Include="Assets\Scripts\Inventory\Database.cs" />
+    <Compile Include="Assets\Scripts\Game\GameClock.cs" />
+    <Compile Include="Assets\Scripts\Game\ManagedUpdate.cs" />
+    <Compile Include="Assets\Scripts\Game\UpdateManager.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
-    <Compile Include="Assets\Scripts\Inventory\UI Follow Mouse.cs" />
+    <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Item.cs" />
+    <Compile Include="Assets\Scripts\Inventory\ItemDatabase.cs" />
+    <Compile Include="Assets\Scripts\Inventory\ItemObject.cs" />
+    <Compile Include="Assets\Scripts\Inventory\UIItem.cs" />
     <Compile Include="Assets\Scripts\NPC\AI.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerCrouch.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerCursor.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMotor.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\DialogueEngine\BoxChan.txt" />
+    <None Include="Assets\Scripts\DialogueEngine\OtherBoxChanScript.txt" />
     <None Include="Assets\Text Files\BoxChanScript.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
