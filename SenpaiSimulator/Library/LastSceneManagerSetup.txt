@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/David Scene.unity
-=======
-- path: Assets/Logan's Scene.unity
->>>>>>> Inventory
   isLoaded: 1
   isActive: 1
